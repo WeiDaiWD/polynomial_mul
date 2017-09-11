@@ -98,7 +98,7 @@ __mm256i_karatsuba__mm256_toom4(
     uint16_t *r1 = r+s, *r2 = r+2*s, *r3 = r+3*s;
     uint16_t *buf = t+s*2;
 
-
+/*
     __m256i m[6];
     for (i=0; i<s; i+=16) {
       m[0] = _mm256_loadu_si256((__m256i *)(a+i));
@@ -142,6 +142,7 @@ __mm256i_karatsuba__mm256_toom4(
       _mm256_storeu_si256((__m256i *)(r1+i), m[0]);
       _mm256_storeu_si256((__m256i *)(r2+i), m[3]);
     }
+*/
     return;
 }
 
