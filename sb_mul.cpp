@@ -284,7 +284,7 @@ int test_SB_32()
                     printf("error\n");
                     for (j=0;j<test_dim*2-1;j++)
                     {
-                        printf("%d %d %d %d\n", j, r[j],r2[j], r[j]-r2[j]);
+                        printf("%lu %d %d %d\n", j, r[j],r2[j], r[j]-r2[j]);
 
                     }
                     return 1;
@@ -295,5 +295,3 @@ int test_SB_32()
     }
     return 0;
 }
-
-
