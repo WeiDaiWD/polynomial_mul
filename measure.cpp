@@ -73,7 +73,7 @@ void Measure(uint16_t N) {
     data.SetZero();
     data.Randa();
     data.Randb();
-//    data.PolyMul(); // extra warm up
+    data.PolyMul(); // extra warm up
     startc = rdtsc();
     data.PolyMul();
     stopc = rdtsc();
@@ -86,7 +86,7 @@ void Measure(uint16_t N) {
   fout.open("res0.txt");
   for (int i = 0; i < count; i ++) {
     data.SetZero();
-//    data.PolyMul(); // extra warm up
+    data.PolyMul(); // extra warm up
     startc = rdtsc();
     data.PolyMul();
     stopc = rdtsc();
@@ -100,7 +100,7 @@ void Measure(uint16_t N) {
   for (int i = 0; i < count; i ++) {
     data.SetZero();
     data.Randa();
-//    data.PolyMul(); // extra warm up
+    data.PolyMul(); // extra warm up
     startc = rdtsc();
     data.PolyMul();
     stopc = rdtsc();
@@ -115,7 +115,7 @@ void Measure(uint16_t N) {
     data.SetZero();
     data.Randa();
     data.Randb();
-//    data.PolyMul(); // extra warm up
+    data.PolyMul(); // extra warm up
     startc = rdtsc();
     data.PolyMul();
     stopc = rdtsc();
