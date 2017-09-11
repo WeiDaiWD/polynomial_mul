@@ -45,16 +45,6 @@ public:
   inline void Randb() { Rand(b, n); }
 
   inline void PolyMul() {
-
-    uint16_t s = n/2;
-    uint16_t const *a1 = a+s;
-    for(uint16_t i=0; i<s; i++)
-    {
-        cout<< i <<endl;
-        r[i] = a[i]-a1[i];
-        cout<< i <<endl;
-    }
-
     karatsuba_toom4(r, t, a, b, n);
     //__mm256i_karatsuba__mm256_toom4(r, t, a, b, n);
   }
