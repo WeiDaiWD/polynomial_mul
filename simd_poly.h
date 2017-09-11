@@ -13,7 +13,7 @@
 #include <string.h>
 #include <time.h>       /* clock_t, clock, CLOCKS_PER_SEC */
 #include <math.h>       /* sqrt */
-#include <NTL/ZZ.h>
+//#include <NTL/ZZ.h>
 #include <immintrin.h>
 using namespace std;
 
