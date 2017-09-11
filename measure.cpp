@@ -45,8 +45,8 @@ public:
   inline void Randb() { Rand(b, n); }
 
   inline void PolyMul() {
-    karatsuba_toom4(r, t, a, b, n);
-    //__mm256i_karatsuba__mm256_toom4(r, t, a, b, n);
+    //karatsuba_toom4(r, t, a, b, n);
+    __mm256i_karatsuba__mm256_toom4(r, t, a, b, n);
   }
 
   inline void Clean() {
@@ -63,7 +63,7 @@ public:
 void Measure(uint16_t N) {
   Data data(N);
   uint64_t startc, stopc;
-  uint16_t count = 1000;
+  uint16_t count = 10000;
   uint64_t sum[4] = {0, 0, 0, 0};
   ofstream fout;
 
