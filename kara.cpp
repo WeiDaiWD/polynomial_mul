@@ -249,14 +249,14 @@ karatsuba_toom4(
         r[i] = a[i]-a1[i];
         r1[i] = b1[i]-b[i];
     }
-    toom4_toom3(t, r2, r, r1, s);
-    toom4_toom3(r2, r, a1, b1, s);
+//    toom4_toom3(t, r2, r, r1, s);
+//    toom4_toom3(r2, r, a1, b1, s);
     for(i=0; i<s; i++)
     {
         r1[i] = r2[i] + t[i];
         r2[i] += r3[i] + t1[i];
     }
-    toom4_toom3(t, r, a, b, s);
+//    toom4_toom3(t, r, a, b, s);
     for(i=0; i<s; i++)
     {
         r[i] = t[i];
