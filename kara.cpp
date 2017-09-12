@@ -238,13 +238,13 @@ karatsuba_toom4(
         grade_school_mul(r, a, b, n);
         return;
     }
-/*    uint16_t i;
+    uint16_t i;
     uint16_t s = n/2;
     uint16_t const *a1 = a+s;
     uint16_t const *b1 = b+s;
     uint16_t *t1 = t+s;
     uint16_t *r1 = r+s, *r2 = r+2*s, *r3 = r+3*s;
-    for(i=0; i<s; i++)
+/*    for(i=0; i<s; i++)
     {
         r[i] = a[i]-a1[i];
         r1[i] = b1[i]-b[i];
