@@ -2,11 +2,11 @@
 
 uint64_t rdtsc() {
   unsigned int lo,hi;
-  __asm__ __volatile__ ("rdtsc" : "=a" (lo), "=d" (hi));
+  __asm__ __volatile__ ("rdtscp" : "=a" (lo), "=d" (hi));
   return ((uint64_t)hi << 32) | lo;
 }
 
-#define rdtscp(t) {asm volatile ("rdtscp" : "=A"(t));}
+//#define rdtscp(t) {asm volatile ("rdtscp" : "=A"(t));}
 
 class Data {
 
@@ -76,11 +76,11 @@ void Measure(uint16_t N) {
     data.Randa();
     data.Randb();
     data.PolyMul(); // extra warm up
-    //startc = rdtsc();
-    rdtscp(startc);
+    startc = rdtsc();
+    //rdtscp(startc);
     data.PolyMul();
-    //stopc = rdtsc();
-    rdtscp(stopc);
+    stopc = rdtsc();
+    //rdtscp(stopc);
     sum[3] += stopc - startc;
     fout<< stopc - startc <<endl;
   }
@@ -91,11 +91,11 @@ void Measure(uint16_t N) {
   for (int i = 0; i < count; i ++) {
     data.SetZero();
     data.PolyMul(); // extra warm up
-    //startc = rdtsc();
-    rdtscp(startc);
+    startc = rdtsc();
+    //rdtscp(startc);
     data.PolyMul();
-    //stopc = rdtsc();
-    rdtscp(stopc);
+    stopc = rdtsc();
+    //rdtscp(stopc);
     sum[0] += stopc - startc;
     fout<< stopc - startc <<endl;
   }
@@ -107,11 +107,11 @@ void Measure(uint16_t N) {
     data.SetZero();
     data.Randa();
     data.PolyMul(); // extra warm up
-    //startc = rdtsc();
-    rdtscp(startc);
+    startc = rdtsc();
+    //rdtscp(startc);
     data.PolyMul();
-    //stopc = rdtsc();
-    rdtscp(stopc);
+    stopc = rdtsc();
+    //rdtscp(stopc);
     sum[1] += stopc - startc;
     fout<< stopc - startc <<endl;
   }
@@ -124,12 +124,12 @@ void Measure(uint16_t N) {
     data.Randa();
     data.Randb();
     data.PolyMul(); // extra warm up
-    //startc = rdtsc();
-    asm volatile ("mfence");
-    rdtscp(startc);
+    startc = rdtsc();
+    //asm volatile ("mfence");
+    //rdtscp(startc);
     data.PolyMul();
-    //stopc = rdtsc();
-    rdtscp(stopc);
+    stopc = rdtsc();
+    //rdtscp(stopc);
     sum[2] += stopc - startc;
     fout<< stopc - startc <<endl;
   }
