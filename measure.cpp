@@ -94,7 +94,7 @@ void Measure(uint16_t N) {
     data.PolyMul(); // extra warm up
     startc = rdtsc();
     //rdtscp(startc);
-    data.PolyMul();
+    //data.PolyMul();
     stopc = rdtsc();
     //rdtscp(stopc);
     sum[0] += stopc - startc;
