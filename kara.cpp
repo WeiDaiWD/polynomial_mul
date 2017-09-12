@@ -244,7 +244,7 @@ karatsuba_toom4(
     uint16_t const *b1 = b+s;
     uint16_t *t1 = t+s;
     uint16_t *r1 = r+s, *r2 = r+2*s, *r3 = r+3*s;
-    for(i=0; i<s; i++)
+    for(i=0; i<384; i++)
     {
         r[i] = a[i]-a1[i];
         r1[i] = b1[i]-b[i];
