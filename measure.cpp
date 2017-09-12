@@ -99,9 +99,9 @@ void Measure(uint16_t N) {
     //rdtscp(stopc);
     sum[0] += stopc - startc;
     if (stopc < startc)
-      cout<< "yes" <<endl;
+      cout<< "yes" << stopc - startc <<endl;
     else
-      cout<< "no" <<endl;
+      cout<< "no" << stopc - startc <<endl;
     max = max > (stopc - startc) ? max : (stopc - startc);
     min = min < (stopc - startc) ? min : (stopc - startc);
     fout<< stopc - startc <<endl;
