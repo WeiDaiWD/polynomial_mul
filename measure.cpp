@@ -92,9 +92,11 @@ void Measure(uint16_t N) {
   for (int i = 0; i < count; i ++) {
     data.SetZero();
     data.PolyMul(); // extra warm up
+    asm volatile ("mfence");
     startc = rdtsc();
     //rdtscp(startc);
     //data.PolyMul();
+    asm volatile ("lfence");
     stopc = rdtsc();
     //rdtscp(stopc);
     sum[0] += stopc - startc;
