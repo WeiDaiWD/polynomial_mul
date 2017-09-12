@@ -233,12 +233,12 @@ karatsuba_toom4(
     uint16_t const   n) /*  in - number of coefficients in a and b */
 
 {
-/*    if (n < 32)
+    if (n < 32)
     {
         grade_school_mul(r, a, b, n);
         return;
     }
-    uint16_t i;
+/*    uint16_t i;
     uint16_t s = n/2;
     uint16_t const *a1 = a+s;
     uint16_t const *b1 = b+s;
