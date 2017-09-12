@@ -238,18 +238,18 @@ karatsuba_toom4(
         grade_school_mul(r, a, b, n);
         return;
     }
-    int i;
+    uint16_t i;
     uint16_t s = n/2;
     uint16_t const *a1 = a+s;
     uint16_t const *b1 = b+s;
     uint16_t *t1 = t+s;
     uint16_t *r1 = r+s, *r2 = r+2*s, *r3 = r+3*s;
-    for(i=0; i<384; i++)
+    for(i=0; i<s; i++)
     {
         r[i] = a[i]-a1[i];
         r1[i] = b1[i]-b[i];
     }
-/*    toom4_toom3(t, r2, r, r1, s);
+    toom4_toom3(t, r2, r, r1, s);
     toom4_toom3(r2, r, a1, b1, s);
     for(i=0; i<s; i++)
     {
@@ -263,7 +263,7 @@ karatsuba_toom4(
         r1[i] += t[i] + t1[i];
         r2[i] += t1[i];
     }
-*/    return;
+    return;
 }
 
 
