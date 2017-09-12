@@ -65,7 +65,7 @@ public:
 void Measure(uint16_t N) {
   Data data(N);
   uint64_t startc, stopc;
-  uint16_t count = 10000;
+  uint16_t count = 10;//000;
   uint64_t sum[4] = {0, 0, 0, 0};
   ofstream fout;
 
@@ -98,6 +98,7 @@ void Measure(uint16_t N) {
     stopc = rdtsc();
     //rdtscp(stopc);
     sum[0] += stopc - startc;
+    cout<< stopc - startc <<endl;
     max = max > (stopc - startc) ? max : (stopc - startc);
     min = min < (stopc - startc) ? min : (stopc - startc);
     fout<< stopc - startc <<endl;
