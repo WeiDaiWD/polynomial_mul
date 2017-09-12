@@ -104,6 +104,14 @@ void Measure(uint16_t N) {
   fout.close();
   cout<< max - min <<endl;
 
+    uint64_t temp = 0;
+    start();
+    for (int i = 0; i < count; i ++)
+      data.PolyMul();
+    stop();
+    temp += stopc - startc;
+    cout<< temp / count <<endl;
+
   // rand * fixed
   fout.open("res1.txt");
   for (int i = 0; i < count; i ++) {
