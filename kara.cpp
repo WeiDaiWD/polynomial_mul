@@ -244,12 +244,12 @@ karatsuba_toom4(
     uint16_t const *b1 = b+s;
     uint16_t *t1 = t+s;
     uint16_t *r1 = r+s, *r2 = r+2*s, *r3 = r+3*s;
-/*    for(i=0; i<s; i++)
+    for(i=0; i<s; i++)
     {
         r[i] = a[i]-a1[i];
         r1[i] = b1[i]-b[i];
     }
-    toom4_toom3(t, r2, r, r1, s);
+/*    toom4_toom3(t, r2, r, r1, s);
     toom4_toom3(r2, r, a1, b1, s);
     for(i=0; i<s; i++)
     {
