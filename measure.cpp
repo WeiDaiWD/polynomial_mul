@@ -87,6 +87,7 @@ void Measure(uint16_t N) {
   fout.close();
 
   // fixed * fixed
+  uint64_t max = 0, min = -1;
   fout.open("res0.txt");
   for (int i = 0; i < count; i ++) {
     data.SetZero();
@@ -97,9 +98,12 @@ void Measure(uint16_t N) {
     stopc = rdtsc();
     //rdtscp(stopc);
     sum[0] += stopc - startc;
+    max = max > (stopc - startc) ? max : (stopc - startc);
+    min = min < (stopc - startc) ? min : (stopc - startc);
     fout<< stopc - startc <<endl;
   }
   fout.close();
+  cout<< max - min <<endl;
 
   // rand * fixed
   fout.open("res1.txt");
