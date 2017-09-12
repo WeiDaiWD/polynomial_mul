@@ -110,7 +110,7 @@ __mm256i_karatsuba__mm256_toom4(
       _mm256_storeu_si256((__m256i *)(r+i), m[0]);
       _mm256_storeu_si256((__m256i *)(r1+i), m[1]);
     }
-/*
+
     __mm256i_toom4__mm256i_toom3(t,  buf, r, r1, s);
     __mm256i_toom4__mm256i_toom3(r2,  buf, a1, b1, s);
 
@@ -142,7 +142,7 @@ __mm256i_karatsuba__mm256_toom4(
       _mm256_storeu_si256((__m256i *)(r1+i), m[0]);
       _mm256_storeu_si256((__m256i *)(r2+i), m[3]);
     }
-*/
+
     return;
 }
 
