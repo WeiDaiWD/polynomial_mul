@@ -92,7 +92,6 @@ void Measure(uint16_t N) {
     data.SetZero();
     data.PolyMul(); // extra warm up
     //startc = rdtsc();
-    asm volatile ("mfence");
     rdtscp(startc);
     data.PolyMul();
     //stopc = rdtsc();
@@ -109,7 +108,6 @@ void Measure(uint16_t N) {
     data.Randa();
     data.PolyMul(); // extra warm up
     //startc = rdtsc();
-    asm volatile ("mfence");
     rdtscp(startc);
     data.PolyMul();
     //stopc = rdtsc();
