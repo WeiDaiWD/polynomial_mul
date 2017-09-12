@@ -91,7 +91,7 @@ void Measure(uint16_t N) {
   uint64_t max = 0, min = -1;
   fout.open("res0.txt");
   for (int i = 0; i < count; i ++) {
-    data.SetZero();
+//    data.SetZero();
 //    data.PolyMul(); // extra warm up
     start();
     data.PolyMul();
@@ -107,7 +107,7 @@ void Measure(uint16_t N) {
   // rand * fixed
   fout.open("res1.txt");
   for (int i = 0; i < count; i ++) {
-    data.SetZero();
+//    data.SetZero();
     data.Randa();
 //    data.PolyMul(); // extra warm up
     start();
@@ -121,7 +121,7 @@ void Measure(uint16_t N) {
   // rand * rand
   fout.open("res2.txt");
   for (int i = 0; i < count; i ++) {
-    data.SetZero();
+//    data.SetZero();
     data.Randa();
     data.Randb();
 //    data.PolyMul(); // extra warm up
