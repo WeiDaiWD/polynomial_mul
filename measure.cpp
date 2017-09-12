@@ -63,7 +63,7 @@ public:
 };
 
 #define start() { asm volatile ("mfence"); startc = rdtsc();}
-#define stop() { asm volatile ("lfence"); stopc = rdtsc();}
+#define stop() { asm volatile ("mfence"); stopc = rdtsc();}
 
 void Measure(uint16_t N) {
   Data data(N);
